@@ -4,7 +4,7 @@
 
 The purpose of this Text Editor is to be able to write text and then be able to go back to what you were writing, since the data has been saved for you to access later.
 
-Deployed Site: [] 
+Deployed Site: [https://tranquil-basin-58325.herokuapp.com] 
 
 Github Repository: [https://github.com/godwingi/text-editor]
 
