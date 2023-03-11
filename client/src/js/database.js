@@ -1,5 +1,7 @@
 import { openDB } from 'idb';
 
+const content = [];
+
 const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
@@ -26,7 +28,7 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Use the .add() method on the store and pass in the content.
-  const request = store.add({ id: 1, value: content });
+  const request = store.add({ content });
 
   // Get confirmation of the request.
   const result = await request;
@@ -47,8 +49,8 @@ export const getDb = async () => {
     const store = tx.objectStore('jate');
   
     // Use the .getAll() method to get all data in the database.
-    const request = store.get(1);
-
+    const request = store.get(content);
+    console.log(request);
     // Get confirmation of the request.
     const result = await request;
     result ? console.log('We did it!', result) : console.log('Try again...') 
